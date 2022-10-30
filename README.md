@@ -23,5 +23,19 @@ Em seguida, devem abrir o Android studio na diretoria criada com a instrução a
 
 ## Firebase
 
-O primeiro passo será a configuração de um projeto no Firebase. Para tal, devem aceder à [Firebase Console](https://console.firebase.google.com/) com um email de eleição vosso, e criar um projeto como demonstrada na figura abaixo:
+O primeiro passo será a configuração de um projeto no Firebase. Para tal, devem aceder à [Firebase Console](https://console.firebase.google.com/) com um email de eleição vosso (gmail) e criar um projeto como demonstrada na figura abaixo:
+
+
+
+O nome do projeto fica ao critério do aluno, sugerindo algo como **sme-movies-app**.
+Nos passos seguintes devem escolher a ativação do Google Analytics e conta *Default* do Firebase.
+
+## Configuração do Firebase
+
+Após a criação do projeto, na página home, é possível reparar nos ícones presentes na figura abaixo:
+
+Devem clicar no correspondente ao sistema operativo em que estão a desenvolver, Android ou iOS.
+
+### Android
+
 
