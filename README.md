@@ -1224,7 +1224,7 @@ class Movie extends Equatable {
 ~~~
 
 Os métodos do tipo *factory* criam novas instâncias da classe, mas não necessáriamente precisam de ser novas a nível de memória, pode ser uma instância já existente.
-O método *fromJson* será útil para a conversão de *Map* para Classe quando forem realizadas chamadas à API do Firebase, que devolve os valores em formato JavaScript Object Naming (Json).
+O método *fromJson* será útil para a conversão de *Map* para Classe quando forem realizadas chamadas à API do Firebase, que devolve os valores em formato JavaScript Object Notation (Json).
 
 Por último criemos o *repository* responsável por chamadas à API da Firebase relacionads com a coleção *Movies*. Ficheiro **movies_repository.dart** na pasta *repository*.
 
@@ -1452,4 +1452,4 @@ Mais ajuda [aqui](https://firebase.google.com/docs/firestore/manage-data/add-dat
 Este formulário deve seguir o mesmo paradigma que temos utilizado até agora no laboratório.
 2. Adicionem uma funcionalidade na AppBar que permita realizar o *logOut* da Firebase. Devem utilizar [este método](https://pub.dev/documentation/firebase_auth/latest/firebase_auth/FirebaseAuth-class.html) da classe já existente no *AuthenticationRepository* .
 3. Adicionem um outro *floating action button* no canto inferior esquerdo que permita aceder através de rotas uma nova página, e que nesta seja possível realizar uma pesquisa por nome do filme, realizando múltiplas chamadas à Firebase até obter apenas os filmes relevantes. Mais ajuda [aqui](https://firebase.google.com/docs/firestore/query-data/get-data).
-4. Por último, adicione uma nova funcionalidade à lista de filmes em que, ao clicar, irá para uma nova página onde mostra os detalhes todos do filme e não apenas o nome.
+4. Por último, adicione uma nova funcionalidade à lista de filmes em que, ao clicar num elemento da lista, irá para uma nova página onde mostra os detalhes todos do filme e não apenas o nome.
