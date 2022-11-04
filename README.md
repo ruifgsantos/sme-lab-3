@@ -26,7 +26,7 @@ Em seguida, devem abrir o Android studio na diretoria criada com a instrução a
 O primeiro passo será a configuração de um projeto no Firebase. Para tal, devem aceder à [Firebase Console](https://console.firebase.google.com/) com um email de eleição vosso (gmail) e criar um projeto como demonstrada na figura abaixo:
 
 <p align="center">
-    <img src="firebase1.jpg" width="50%">
+    <img src="firebase1.jpg" width="70%">
 </p>
 
 O nome do projeto fica ao critério do aluno, sugerindo algo como **sme-movies-app**.
@@ -39,7 +39,7 @@ Após a criação do projeto, na página home, é possível reparar nos ícones 
 Devem clicar no correspondente ao sistema operativo em que estão a desenvolver, Android ou iOS.
 
 <p align="center">
-    <img src="firebase2.jpg" width="50%">
+    <img src="firebase2.jpg" width="70%">
 </p>
 
 ### <u>Android</u>
@@ -47,7 +47,7 @@ Devem clicar no correspondente ao sistema operativo em que estão a desenvolver,
 Ao clicar no ícone do Android, será pedido para preencher configurações do projeto mobile. No caso de ser Android, a primeira configuração **Application ID** ou **Android package name**, foi criada automaticamente com a primeira instrução de linha de comandos que originou o projeto de Flutter, e por isso podemos consultar o mesmo aqui:
 
 <p align="center">
-    <img src="firebase3.jpg" width="50%">
+    <img src="firebase3.jpg" width="70%">
 </p>
 
 O **application Id** gerado pode ser modificado ao gosto do aluno, apenas temos de ter em atenção que este deve ser único, uma vez que na eventualidade de a aplicação ser partilhada na Google PlayStore, este será comparado com as aplicações existentes e no caso de existir uma outra aplicação com o mesmo applicationID, originará a um erro. Sugere-se a utilização do número de aluno da Lusófona como garantia, exemplo: **com.a22002234.sme_movies_app**.
@@ -834,6 +834,13 @@ class RegisterForm extends StatelessWidget {
       BlocListener<RegisterFormCubit, RegisterFormState>(
         listener: (context, state) {
           if (state.status.isSubmissionSuccess) {
+              ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                  const SnackBar(
+                      backgroundColor: Colors.green,
+                      content:
+                      Text('Create account successful')));
             Navigator.of(context).pop();
           } else if (state.status.isSubmissionFailure) {
             ScaffoldMessenger.of(context)
@@ -1194,24 +1201,28 @@ Em seguida, necessitamos da estrutura de dados corresponde a um *Movie*, criando
 import 'package:equatable/equatable.dart';
 
 class Movie extends Equatable {
+  final String uid;
   final String title;
   final String trailer_url;
   final String image_url;
   final List<String> categories;
 
   const Movie(
-      {required this.title,
+      {required this.uid,
+      required this.title,
       required this.categories,
       required this.image_url,
       required this.trailer_url});
 
   factory Movie.fromJson(Map<String, dynamic> json) => Movie(
+      uid: json['uid'],
       title: json['title'],
       categories: json['categories'].cast<String>(),
       image_url: json['image_url'],
       trailer_url: json['trailer_url']);
 
   Map<String, dynamic> toJson() => {
+        "uid": uid,
         "title": title,
         "categories": categories,
         "image_url": image_url,
@@ -1245,7 +1256,7 @@ class MoviesRepository {
         .asStream()
         .map((QuerySnapshot<Map<String, dynamic>> snapshot) => snapshot.docs
             .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) =>
-                Movie.fromJson(doc.data())).toList())
+                Movie.fromJson({'uid': doc.reference.id, ...doc.data()})).toList())
         .single;
   }
 }
@@ -1452,4 +1463,5 @@ Mais ajuda [aqui](https://firebase.google.com/docs/firestore/manage-data/add-dat
 Este formulário deve seguir o mesmo paradigma que temos utilizado até agora no laboratório.
 2. Adicionem uma funcionalidade na AppBar que permita realizar o *logOut* da Firebase. Devem utilizar [este método](https://pub.dev/documentation/firebase_auth/latest/firebase_auth/FirebaseAuth-class.html) da classe já existente no *AuthenticationRepository* .
 3. Adicionem um outro *floating action button* no canto inferior esquerdo que permita aceder através de rotas uma nova página, e que nesta seja possível realizar uma pesquisa por nome do filme, realizando múltiplas chamadas à Firebase até obter apenas os filmes relevantes. Mais ajuda [aqui](https://firebase.google.com/docs/firestore/query-data/get-data).
-4. Por último, adicione uma nova funcionalidade à lista de filmes em que, ao clicar, irá para uma nova página onde mostra os detalhes todos do filme e não apenas o nome.
+4. Adicione uma nova funcionalidade à lista de filmes em que, ao clicar, irá para uma nova página onde mostra os detalhes todos do filme e não apenas o nome. Devem utilizar um Dialog, mais ajuda [aqui](https://efficientcoder.net/flutter-alert-dialog/).
+5. Por último, adicione uma funcionalidade à lista de filmes de realizar um delete de um filme. Mais ajuda [aqui](https://firebase.google.com/docs/firestore/manage-data/delete-data).
