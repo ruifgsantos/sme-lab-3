@@ -10,6 +10,11 @@ Neste laboratório iremos desenvolver uma aplicação em Flutter que permite cri
 
 No final do laboratório é esperado que consigamos visualizar um ecrã de home semelhante ao da figura abaixo:
 
+<p align="center">
+ <img src="firebase15.jpg" width="30%">
+ <img src="firebase16.jpg" width="30%">
+ <img src="firebase20.jpg" width="30%">
+</p>
 
 ## Criação do projeto
 
