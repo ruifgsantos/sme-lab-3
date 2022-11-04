@@ -982,40 +982,14 @@ Modifiquemos então o ficheiro **login_form.dart** para conter o seguinte:
 
 ~~~
 (...)
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
-
-  @override
-  Widget build(BuildContext context) =>
-      BlocListener<LoginFormCubit, LoginFormState>(
-        listener: (context, state) {
-          if (state.status.isSubmissionFailure) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(SnackBar(
-                  backgroundColor: Colors.red,
-                  content:
-                      Text(state.errorMessage ?? 'Authentication Failure')));
-          }
-        },
-        child: SingleChildScrollView(
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-          const CircleAvatar(
-            radius: 52,
-            backgroundImage: NetworkImage(
-                "https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png"),
-          ),
-          const SizedBox(height: 16),
-          _EmailInput(),
-          const SizedBox(height: 8),
-          _PasswordInput(),
-          const SizedBox(height: 8),
-          _LoginButton(),
-          const SizedBox(height: 8),
-          _SignUpButton()
-        ])),
-      );
-}
+const SizedBox(height: 16),
+_EmailInput(),
+const SizedBox(height: 8),
+_PasswordInput(),
+const SizedBox(height: 8),
+_LoginButton(),
+const SizedBox(height: 8),
+_SignUpButton()
 (...)
 
 
