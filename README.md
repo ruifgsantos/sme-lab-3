@@ -174,6 +174,9 @@ No entanto, esta inicialização está dependente de alguns componentes do Flutt
 
 Seguindo o próximos passos, devem ter um ecrã semelhante ao seguinte:
 
+<p align="center">
+ <img src="firebase15.jpg" width="50%">
+</p>
 
 Para a criação de este ecrã, são necessários os seguintes componentes:
 
