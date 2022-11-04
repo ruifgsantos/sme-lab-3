@@ -1235,7 +1235,7 @@ class Movie extends Equatable {
 ~~~
 
 Os métodos do tipo *factory* criam novas instâncias da classe, mas não necessáriamente precisam de ser novas a nível de memória, pode ser uma instância já existente.
-O método *fromJson* será útil para a conversão de *Map* para Classe quando forem realizadas chamadas à API do Firebase, que devolve os valores em formato JavaScript Object Naming (Json).
+O método *fromJson* será útil para a conversão de *Map* para Classe quando forem realizadas chamadas à API do Firebase, que devolve os valores em formato JavaScript Object Notation (Json).
 
 Por último criemos o *repository* responsável por chamadas à API da Firebase relacionads com a coleção *Movies*. Ficheiro **movies_repository.dart** na pasta *repository*.
 
