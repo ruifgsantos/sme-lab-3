@@ -1444,6 +1444,5 @@ Utilizando o *floating action button* presente no canto inferior direito, crie u
 Mais ajuda [aqui](https://firebase.google.com/docs/firestore/manage-data/add-data).
 Este formulário deve seguir o mesmo paradigma que temos utilizado até agora no laboratório.
 2. Adicionem uma funcionalidade na AppBar que permita realizar o *logOut* da Firebase. Devem utilizar [este método](https://pub.dev/documentation/firebase_auth/latest/firebase_auth/FirebaseAuth-class.html) da classe já existente no *AuthenticationRepository* .
-3. Adicionem um outro *floating action button* no canto inferior esquerdo que permita aceder através de rotas uma nova página, e que nesta seja possível realizar uma pesquisa por nome do filme, realizando múltiplas chamadas à Firebase até obter apenas os filmes relevantes. Mais ajuda [aqui](https://firebase.google.com/docs/firestore/query-data/get-data).
-4. Adicione uma nova funcionalidade à lista de filmes em que, ao clicar, irá para uma nova página onde mostra os detalhes todos do filme e não apenas o nome. Devem utilizar um Dialog, mais ajuda [aqui](https://efficientcoder.net/flutter-alert-dialog/).
-5. Por último, adicione uma funcionalidade à lista de filmes de realizar um delete de um filme. Mais ajuda [aqui](https://firebase.google.com/docs/firestore/manage-data/delete-data).
+3. Adicione uma nova funcionalidade à lista de filmes em que, ao clicar, irá para uma nova página onde mostra os detalhes todos do filme e não apenas o nome. Devem utilizar um Dialog, mais ajuda [aqui](https://efficientcoder.net/flutter-alert-dialog/).
+4. Por último, adicione uma funcionalidade à lista de filmes de realizar um delete de um filme. Mais ajuda [aqui](https://firebase.google.com/docs/firestore/manage-data/delete-data).
