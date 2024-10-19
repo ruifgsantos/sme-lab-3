@@ -41,96 +41,30 @@ Nos passos seguintes devem escolher a ativação do Google Analytics e conta *De
 
 Após a criação do projeto, na página home, é possível reparar nos ícones presentes na figura abaixo:
 
-Devem clicar no correspondente ao sistema operativo em que estão a desenvolver, Android ou iOS.
-
 <p align="center">
-    <img src="firebase2.jpg" width="70%">
+    <img src="firebase2.png" width="70%">
 </p>
 
-### <u>Android</u>
+Devem clicar no correspondente à linguagem que estão a desenvolver, neste caso, o Flutter.
 
-Ao clicar no ícone do Android, será pedido para preencher configurações do projeto mobile. No caso de ser Android, a primeira configuração **Application ID** ou **Android package name**, foi criada automaticamente com a primeira instrução de linha de comandos que originou o projeto de Flutter, e por isso podemos consultar o mesmo aqui:
+Antes de continuar a seguir os passos que o Firebase indica, devemos instalar dois _software packages_:
+ * Instalar o [NodeJS](https://nodejs.org/en)
+ * Após a instalação do NodeJS, devem abrir um terminal e instalar a Firebase CLI, executando `npm install -g firebase-tools`
 
-<p align="center">
-    <img src="firebase3.jpg" width="70%">
-</p>
+Após a instalação do `firebase-tools`, podem seguir os passos normalmente. **Devem pular o passo que indica a criação de um projeto se já o têm criado!**
 
-O **application Id** gerado pode ser modificado ao gosto do aluno, apenas temos de ter em atenção que este deve ser único, uma vez que na eventualidade de a aplicação ser partilhada na Google PlayStore, este será comparado com as aplicações existentes e no caso de existir uma outra aplicação com o mesmo applicationID, originará a um erro. Sugere-se a utilização do número de aluno da Lusófona como garantia, exemplo: **com.a22002234.sme_movies_app**.
-Devem também modificar o campo **minSdkVersion** para 21, colmatando possíveis erros no decorrer do projeto e limitações.
-De notar que esta mudança é uma das configurações mais importantes para se conseguir atingir o maior número de dispositivos Android compatíveis com a aplicação.
+**Nota: Os comandos sequentes à instalação do firebase-tools devem ser, preferencialmente, executados na diretoria do projeto. A configuração está terminada quando existir um ficheiro no projeto firebase_options.dart e o seguinte troço de código.**
 
-Em seguida, o **Application Name** pode ser algo mais amigável de se ler, como: **Movies App SME**.
+```
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-O campo opcional **Debug signing certificate** apenas é utilizado em algumas exceções do Firebase, tais como **Social logins** da Google entre outros serviços. Como tal, podemos providenciar este campo no futuro caso necessitemos algumas destas funcionalidades, podendo prosseguir para o próximo passo.
+// ...
 
-Devem fazer download do ficheiro **google-services.json**:
-
-<p align="center">
-    <img src="firebase4.jpg" width="50%">
-</p>
-
-Este é o ficheiro mais importante para a configuração do Firebase SDK, contendo constantes e parameterizações para ser possivel connectar à Firebase desde o nosso projeto. O Firebase SDK necessita destas constantes para ser configurado.
-Após o download do ficheiro devem colocar o mesmo na mesma diretoria onde se encontra o ficheiro **build.gradle**:
-
-<p align="center">
-    <img src="firebase5.jpg" width="50%">
-</p>
-
-No próximo passo, adicionar o Firebase SDK ao projeto são necessárias mudanças nas configurações do projeto Android. Sendo que a primeira será no ficheiro **build.gradle** de raíz da pasta android (nome_do_projeto/android/build.gradle).
-
-<p align="center">
-    <img src="firebase6.jpg" width="70%">
-</p>
-
-Em seguida, no ficheiro **build.gradle** do módulo a nível da app (nome_do_projeto/android/app/build.gradle), devem colocar as seguintes alterações:
-
-<p align="center">
-    <img src="firebase7.jpg" width="70%">
-</p>
-
-<p align="center">
-    <img src="firebase8.jpg" width="70%">
-</p>
-
-Em seguida na diretoria *root* do projeto, devem executar o comando:
-
-~~~
-flutter pub get
-~~~
-
-De forma a efetuar download de todas as dependencias relacionadas com o Flutter. Dá-se por terminada a configuração do Android e presentes na página *home* do Firebase Console.
-
-### <u>iOS</u>
-
-
-Ao clicar no ícone do iOS, será pedido para preencher configurações do projeto mobile. No caso de ser iOS, a primeira configuração **Bundle ID**, foi criada automaticamente com a primeira instrução de linha de comandos que originou o projeto de Flutter, e por isso podemos consultar o mesmo abrindo o projeto no *Xcode*. Podendo este ser aberto da seguinte forma:
-
-<p align="center">
-    <img src="firebase9.jpg" width="70%">
-</p>
-
-Acedendo ao menu de Tools do Android Studio. 
-**<u>Nota:</u>** devem ter a pasta ios selecionada antes de abrir o menu das Tools para visualizar a opção *Open iOS module in Xcode*.
-Sendo depois possível de visualizar o *bundle identifier* da seguinte forma:
-
-<p align="center">
-    <img src="firebase10.jpg" width="70%">
-</p>
-
-Preenchendo o primeiro campo com o valor indicado. O valor deste **bundle Id** pode ser modificado ao gosto do aluno, no entanto, este deve ser único, uma vez que partilhada na AppStore, é verificada a existência de aplicações com **bundle id's** iguais. 
-Uma vez realizado este passo, devem fazer o download do ficheiro **GoogleService-info.plist** e colocar na pasta (ios/Runner).
-
-<p align="center">
-    <img src="firebase11.jpg" width="70%">
-</p>
-
-Após este passo, a configuração para iOS está completa uma vez que o comando 
-
-~~~
-flutter build ios
-~~~
-
-irá realizar todas as operações necessárias de configuração do Firebase SDK no sistema operativo e na aplicação.
+await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
+```
 
 ## Instalar dependências
 
