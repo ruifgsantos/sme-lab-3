@@ -11,9 +11,9 @@ Neste laboratório iremos desenvolver uma aplicação em Flutter que permite cri
 No final do laboratório é esperado que consigamos visualizar um ecrã de home semelhante ao da figura abaixo:
 
 <p align="center">
- <img src="firebase15.jpg" width="30%">
- <img src="firebase16.jpg" width="30%">
- <img src="firebase20.jpg" width="30%">
+ <img src="images/firebase15.jpg" width="30%">
+ <img src="images/firebase16.jpg" width="30%">
+ <img src="images/firebase20.jpg" width="30%">
 </p>
 
 ## Criação do projeto
@@ -31,7 +31,7 @@ Em seguida, devem abrir o Android studio na diretoria criada com a instrução a
 O primeiro passo será a configuração de um projeto no Firebase. Para tal, devem aceder à [Firebase Console](https://console.firebase.google.com/) com um email de eleição vosso (gmail) e criar um projeto como demonstrada na figura abaixo:
 
 <p align="center">
-    <img src="firebase1.jpg" width="70%">
+    <img src="images/firebase1.jpg" width="70%">
 </p>
 
 O nome do projeto fica ao critério do aluno, sugerindo algo como **sme-movies-app**.
@@ -42,7 +42,7 @@ Nos passos seguintes devem escolher a ativação do Google Analytics e conta *De
 Após a criação do projeto, na página home, é possível reparar nos ícones presentes na figura abaixo:
 
 <p align="center">
-    <img src="firebase2.png" width="70%">
+    <img src="images/firebase2.png" width="70%">
 </p>
 
 Devem clicar no correspondente à linguagem que estão a desenvolver, neste caso, o Flutter.
@@ -109,7 +109,7 @@ No entanto, esta inicialização está dependente de alguns componentes do Flutt
 Seguindo o próximos passos, devem ter um ecrã semelhante ao seguinte:
 
 <p align="center">
- <img src="firebase15.jpg" width="50%">
+ <img src="images/firebase15.jpg" width="50%">
 </p>
 
 Para a criação de este ecrã, são necessários os seguintes componentes:
@@ -567,7 +567,7 @@ class MyHomePage extends StatelessWidget {
 Após esta alteração, o ecrã atual, deve estar semelhante à seguinte imagem:
 
 <p align="center">
-    <img src="firebase12.jpg" width="70%">
+    <img src="images/firebase12.jpg" width="70%">
 </p>
 
 Ao tentar realizar o login, com qualquer tipo de valores de autenticação, obtém-se um erro. Este indica-nos a necessidade de ativação do serviços de autenticação da Firebase. 
@@ -575,7 +575,7 @@ Em qualquer tipo de serviços da Firebase, o seu funcionamente está dependente 
 Devem aceder ao ecrã de home da Firebase Console e no menu lateral, clicar em **<u>Authentication</u>** e depois **E-mail/Senha**:
 
 <p align="center">
-    <img src="firebase13.jpg" width="70%">
+    <img src="images/firebase13.jpg" width="70%">
 </p>
 
 Em seguida ativar este tipo de autenticação. Este é o ponto principal de ativação para outros tipos de autenticação, tais como Google SignIn, Facebook SignIn, Telemóvel, Twitter, entre outros possíveis.
@@ -583,7 +583,7 @@ Em seguida ativar este tipo de autenticação. Este é o ponto principal de ativ
 Experimentando novamente a aplicação com credenciais aleatórias, podemos verificar que o erro mostrado é diferente:
 
 <p align="center">
-    <img src="firebase14.jpg" width="70%">
+    <img src="images/firebase14.jpg" width="70%">
 </p>
 
 ## Ecrã Registo
@@ -986,14 +986,14 @@ class RegisterPage extends StatelessWidget {
 Os ecrã atuais devem ser algo parecido com os seguintes:
 
 <p style="display: flex; justify-content: space-between;">
-    <img src="firebase15.jpg" width="45%">
-    <img src="firebase16.jpg" width="45%">
+    <img src="images/firebase15.jpg" width="45%">
+    <img src="images/firebase16.jpg" width="45%">
 </p>
 
 Devem então verificar se o ecrã de registo está a funcionar corretamente, criando uma conta e visualizando a mesma no menu de *users* do serviços de autenticação da Firebase:
 
 <p align="center">
-    <img src="firebase17.jpg" width="70%">
+    <img src="images/firebase17.jpg" width="70%">
 </p>
 
 ## Ecrã Movies
@@ -1021,7 +1021,7 @@ Estamos aplicar uma regra para que os nossos dados apenas sejam acessíveis se e
 Na página home do Firebase Database, devem criar uma coleção chamada *movies* e inserir um movie com os seguintes campos:
 
 <p align="center">
-    <img src="firebase18.jpg" width="70%">
+    <img src="images/firebase18.jpg" width="70%">
 </p>
 
 * Os dados do filme pode ser à escolha do aluno, devem apenas seguir a mesma lógica da estrutura de dados;
@@ -1030,7 +1030,7 @@ Na página home do Firebase Database, devem criar uma coleção chamada *movies*
 * Sempre que é adicionado um novo elemento a uma coleção, é atribuido um identificador único, possível de verificar na imagem abaixo.
 
 <p align="center">
-    <img src="firebase19.jpg" width="70%">
+    <img src="images/firebase19.jpg" width="70%">
 </p>
 
 Criemos então uma *Movies Page* que irá listar todos os elementos presentes na coleção *movies*.
@@ -1366,7 +1366,7 @@ class LoginPage extends StatelessWidget {
 A página home dos *movies* deve ser algo parecido com:
 
 <p align="center">
-    <img src="firebase20.jpg" width="50%">
+    <img src="images/firebase20.jpg" width="50%">
 </p>
 
 ## Exercicios
