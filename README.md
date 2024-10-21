@@ -183,8 +183,8 @@ class CacheClient {
 
 Vamos perceber o que está acontecer:
 
-* Criou-se uma class AuthenticationRepository que tem um construtor com parâmetros opcionais e que caso não sejam providenciados, é atribuído um valor por omissão às suas variáveis final;
-* É criado um método do tipo *getter* que devolve o valor do utilizador atualment autenticado no Firebase através do método da biblioteca *firabase_auth* o *authStateChanges()*. Este irá emitir valores a cada alteração do estado do utilziador autenticado e para melhor controlo sobre este valor, estamos a mapear o seu valor para uma estrutura de dados criada por nós que representa um utilziador, o *User*;
+* Criou-se uma class AuthenticationRepository que tem um construtor com parâmetros opcionais e que caso não seja fornecido, é atribuído um valor por omissão às suas variáveis final;
+* É criado um método do tipo *getter* que devolve o valor do utilizador atualmente autenticado no Firebase através do método da biblioteca *firabase_auth* o *authStateChanges()*. Este irá emitir valores a cada alteração do estado do utilizador autenticado e para melhor controlo, estamos a mapear o seu valor para uma estrutura de dados criada por nós que representa um utilizador, o *User*;
 * Este mapeamento está a ser realizado através de um *extension*, que é uma funcionalidade do Flutter, permitindo adicionar operações a estruturas de dados já criadas. Neste caso em especifíco, estamos adicionar uma funcionalidade para mapear os valores da estrutura de dados existente do Firebase, a *firebase_auth.User*, para a nossa estrutura de dados *User*. Esta funcionalidade é um método do tipo *getter* chamado *toUser*. Sempre que recebemos um valor de *firebase_auth.User* referente ao Firebase, atribuimos valores correspondentes à estrutura de dados *User*;
 * A classe *CacheClient* nada mais é do que uma classe organizadora de operações sobre um *Map*. Esta classe seré particularmente útil para gestão do estado atual de autenticação na aplicação que será utilizado no decorrer deste laboratório. Mais à frente iremos utilizar este *CacheClient*.
 
@@ -221,7 +221,7 @@ class User extends Equatable {
 
 Asumimos que o utilizador tem apenas estas propriedades (email, nome, id e photo) com alguns métodos que auxiliam a lógica na aplicação.
 
-Continuando a com a criação dos componentes do ecrã de Login, iremos prosseguir com o estado do formulário. Esta classe estará encarregada de conter os valores de cada campo do formulário, neste caso, para efetuarmos o login no Firebase, só precisaremos de dois campos: email e password.
+Continuando com a criação dos componentes do ecrã de Login, iremos prosseguir com o estado do formulário. Esta classe estará encarregada de conter os valores de cada campo do formulário, neste caso, para efetuarmos o login no Firebase, só precisaremos de dois campos: email e password.
 Criemos primeiro as classes responsáveis pela validação dos campos do formulário.
 Criemos então dois ficheiros **password.dart** e **email.dart** com o seguinte conteúdo respetivamente:
 
